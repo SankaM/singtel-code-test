@@ -3,6 +3,7 @@ package com.singtel.priyantha.model;
 import com.singtel.priyantha.animal.bird.Bird;
 import com.singtel.priyantha.animal.bird.Chicken;
 import com.singtel.priyantha.animal.bird.Duck;
+import com.singtel.priyantha.animal.bird.Rooster;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -30,7 +31,7 @@ public class BirdTest {
         System.setErr(originalErr);
     }
 
-    //1 a. How did you unit test it?
+    //Test answer 1 a. How did you unit test it?
     @Test
     public void testSinging(){
         Bird b1 = new Bird();
@@ -52,7 +53,7 @@ public class BirdTest {
         Assert.assertEquals("I am flying"+System.getProperty("line.separator"), outContent.toString());
     }
 
-    // Test Q 2
+    // Test answer Q 2
     @Test
     public void testQ2a(){
 
@@ -85,6 +86,25 @@ public class BirdTest {
         c2.fly();
         Assert.assertEquals("", outContent.toString());
     }
+
+
+    //Test answer Q3
+    @Test
+    public void testQ3a(){
+
+        Rooster r1 = new Rooster();
+        r1.say();
+        Assert.assertEquals("Cock-a-doodle-doo"+System.getProperty("line.separator"), outContent.toString());
+    }
+
+    // Q 3.B
+    // How is the rooster related to the chicken? >> Rooster is a Chicken. Can be considered as a child of chicken
+
+    // Q 3.C
+    //Can you think of other ways to model a rooster without using inheritance? >>
+    // Yes, By using flag in Chicken class saying isRooster, if it is true then set chicken sounds like a rooster
+
+
 
 
 
