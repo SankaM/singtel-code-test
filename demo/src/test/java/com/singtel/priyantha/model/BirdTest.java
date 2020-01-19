@@ -1,9 +1,8 @@
 package com.singtel.priyantha.model;
 
-import com.singtel.priyantha.animal.bird.Bird;
-import com.singtel.priyantha.animal.bird.Chicken;
-import com.singtel.priyantha.animal.bird.Duck;
-import com.singtel.priyantha.animal.bird.Rooster;
+import com.singtel.priyantha.animal.Cat;
+import com.singtel.priyantha.animal.Dog;
+import com.singtel.priyantha.animal.bird.*;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -103,6 +102,37 @@ public class BirdTest {
     // Q 3.C
     //Can you think of other ways to model a rooster without using inheritance? >>
     // Yes, By using flag in Chicken class saying isRooster, if it is true then set chicken sounds like a rooster
+
+    // Test answer Q4
+
+    @Test
+    public void testQ4a(){
+
+        Parrot p1 = new Parrot(new Dog());
+        p1.say();
+        Assert.assertEquals("Woof, woof"+System.getProperty("line.separator"), outContent.toString());
+    }
+
+    @Test
+    public void testQ4b(){
+
+        Parrot p2 = new Parrot(new Cat());
+        p2.say();
+        Assert.assertEquals("Meow"+System.getProperty("line.separator"), outContent.toString());
+    }
+
+    @Test
+    public void testQ4c(){
+
+        Parrot p3 = new Parrot(new Rooster());
+        p3.say();
+        Assert.assertEquals("Cock-a-doodle-doo"+System.getProperty("line.separator"), outContent.toString());
+    }
+
+    //Q4d
+    //How do you keep the parrot maintainable? What if we need another parrot
+    //lives near a Duck? Or near a phone that rings frequently?
+    //Answer >> add new object type to the if condition inside the parrot say method.
 
 
 
